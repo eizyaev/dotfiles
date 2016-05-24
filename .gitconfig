@@ -4,3 +4,5 @@
 	editor = vim
 [user]
 	email = eivizyaev@gmail.com
+[credential]
+	helper = wincred
