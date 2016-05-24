@@ -1,0 +1,6 @@
+[core]
+	eol = lf
+	autocrlf = input
+	editor = vim
+[user]
+	email = eivizyaev@gmail.com
