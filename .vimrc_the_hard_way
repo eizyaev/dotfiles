@@ -1,0 +1,87 @@
+echo ">^.^<"
+
+" enables number
+:set number
+" numbers offset from leftside
+:set numberwidth=1
+
+" open many files when some of them are unsaved
+:set hidden
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin() 
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
+
+" " let Vundle manage Vundle, required
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'rking/ag.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" " see :h vundle for more details or wiki for FAQ
+" " Put your non-Plugin stuff after this line
+
+
+:let mapleader = ","
+:let maplocalleader = "\\"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                            normal/visual mode mappings                       "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" noremap = Nonrecursive Mapping
+:noremap <leader>- ddp
+:noremap <leader>o 2ddp
+:noremap <leader>_ ddkkp
+" move to beggining of line
+:noremap H 0
+" move to end of line
+:noremap L $
+" double quot current word
+:nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+" single quot current word
+:nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+" ev = edit my vimrc file
+:nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" sv = source my vimrc file
+:nnoremap <leader>sv :source $MYVIMRC<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                            insert mode mappings:                             "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" TODO: disable the added space 
+:inoremap <c-u> <esc>viwUi 
+" easy exit from insert mode
+:inoremap jk <esc>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                            visual mode mappings:                             "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" single quot visual selection
+:vnoremap <leader>' <esc>a'<esc>`<i'<esc>`>el
+" double quot visual selection
+:vnoremap <leader>" <esc>a"<esc>`<i"<esc>`>el
+
+" My signature
+:iabbrev ssig -- <cr>Eiv Izyaev<cr>eivizyaev@gmail.com
+
+" Muscle memory training
+:inoremap <esc> <nop>
+:inoremap <Left> <nop>
+:inoremap <Right> <nop>
+:inoremap <Up> <nop>
+:inoremap <Down> <nop>
+:nnoremap <Left> <nop>
+:nnoremap <Right> <nop>
+:nnoremap <Up> <nop>
+:nnoremap <Down> <nop>
+
