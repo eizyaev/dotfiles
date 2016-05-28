@@ -22,3 +22,6 @@ darkc()
 
 eval `dircolors ~/.dir_colors`
 alias ls="ls --color"
+alias desktop="cd C:/Users/user/Desktop"
+alias open="cygstart"
+alias reload="source ~/.bashrc"
