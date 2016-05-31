@@ -16,6 +16,8 @@ set expandtab
 " show status line
 set laststatus=2
 set statusline=%f         " Path to the file
+set statusline+=/         " Separator
+set statusline+=%{fugitive#statusline()}
 set statusline+=%=        " Switch to the right side
 set statusline+=%l        " Current line
 set statusline+=/         " Separator
@@ -87,6 +89,16 @@ let g:solarized_termtrans=1
 colorscheme solarized
 call togglebg#map("<F5>")
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                            NERDTree configurations                           "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Open NERDTree when no files specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Map NERDtree to <C-n>
+map <C-n> :NERDTreeToggle<CR>
+" Close window if the only window left is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+set encoding=utf-8
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '~'
