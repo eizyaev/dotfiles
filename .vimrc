@@ -30,6 +30,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 source ~/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect('~/dotfiles/vim/bundle/{}')
+call pathogen#helptags()
 filetype plugin indent on    " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -59,8 +60,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 "                            insert mode mappings:                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" TODO: disable the added space 
-inoremap <c-u> <esc>viwUi 
+" TODO: disable the added space
+inoremap <c-u> <esc>viwUi
 " easy exit from insert mode
 inoremap jk <esc>
 
@@ -89,6 +90,7 @@ set background=dark
 let g:solarized_termtrans=1
 colorscheme solarized
 call togglebg#map("<F5>")
+let g:airline_theme="solarized"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                            NERDTree configurations                           "
