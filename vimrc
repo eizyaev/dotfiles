@@ -16,6 +16,15 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+set showcmd             " show command in bottom bar
+
+set cursorline          " highlight current line
+
+set wildmenu            " visual autocomplete for command menu
+
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+
 " show status line
 set statusline=%f         " Path to the file
 set statusline+=/         " Separator
@@ -41,7 +50,6 @@ filetype plugin indent on    " required
 "==========================================================
 
 syntax enable
-set hlsearch
 set background=dark
 let g:solarized_termtrans=1
 colorscheme solarized
@@ -95,6 +103,9 @@ nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " sv = source my vimrc file
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" highlight last inserted text
+nnoremap gV `[v`]
 
 "==========================================================
 " insert mode mappings:
