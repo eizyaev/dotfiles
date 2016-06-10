@@ -31,8 +31,8 @@ set statusline+=%L        " Total lines
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
-source ~/dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect('~/dotfiles/vim/bundle/{}')
+source ~/.dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect('~/.dotfiles/vim/bundle/{}')
 call pathogen#helptags()
 filetype plugin indent on    " required
 
@@ -55,7 +55,7 @@ let g:airline_theme="solarized"
 set laststatus=2 "fix vim-airline doesn't appear
 
 "==========================================================
-" NERDTree configurations 
+" NERDTree configurations
 "==========================================================
 
 " Open NERDTree when no files specified
@@ -106,7 +106,7 @@ inoremap <c-u> <esc>viwUi
 inoremap jk <esc>
 
 "==========================================================
-" visual mode mappings: 
+" visual mode mappings:
 "==========================================================
 
 " single quot visual selection
