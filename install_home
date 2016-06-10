@@ -1,3 +1,4 @@
 #!/bin/bash
 
+ln -sf ~/.dotfiles/bashrc ~/.bashrc
 ln -sf ~/.dotfiles/mintty/minttyrc_dark ~/.minttyrc

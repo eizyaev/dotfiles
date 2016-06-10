@@ -14,7 +14,7 @@ set tabstop=4
 set shiftwidth=4
 
 " On pressing tab, insert 4 spaces
-set expandtab
+"set expandtab
 
 set showcmd             " show command in bottom bar
 
@@ -24,6 +24,9 @@ set wildmenu            " visual autocomplete for command menu
 
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+
+" white space symbols when list enabled
+set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
 
 " show status line
 set statusline=%f         " Path to the file
@@ -106,6 +109,9 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " highlight last inserted text
 nnoremap gV `[v`]
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
 
 "==========================================================
 " insert mode mappings:
