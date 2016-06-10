@@ -1,7 +1,6 @@
 #!/bin/bash
 
-ln -sf ~/dotfiles/.vimrc ~/.vimrc
-ln -sf ~/dotfiles/.bashrc ~/.bashrc
-ln -sf ~/dotfiles/.dir_colors ~/.dir_colors
-ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
-ln -sf ~/dotfiles/mintty/.minttyrc_dark ~/.minttyrc
+ln -sf ~/dotfiles/vimrc ~/.vimrc
+ln -sf ~/dotfiles/bashrc ~/.bashrc
+ln -sf ~/dotfiles/dir_colors ~/.dir_colors
+ln -sf ~/dotfiles/gitconfig ~/.gitconfig

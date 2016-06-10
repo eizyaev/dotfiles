@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ln -sf ~/dotfiles/mintty/minttyrc_dark ~/.minttyrc
