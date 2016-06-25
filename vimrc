@@ -1,6 +1,7 @@
 echo ">^.^<"
 
 set relativenumber " enables relative numbers
+set number " show current nuber
 
 set numberwidth=1 " numbers offset from leftside
 
@@ -14,19 +15,22 @@ set tabstop=4
 set shiftwidth=4
 
 " On pressing tab, insert 4 spaces
-"set expandtab
+"==set expandtab
 
-set showcmd             " show command in bottom bar
+set showcmd " show command in bottom bar
 
-set cursorline          " highlight current line
+set cursorline " highlight current line
 
-set wildmenu            " visual autocomplete for command menu
+set wildmenu " visual autocomplete for command menu
 
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
+set incsearch " search as characters are entered
+set hlsearch " highlight matches
 
 " white space symbols when list enabled
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
+
+" diable bell
+:set vb t_vb=
 
 " show status line
 set statusline=%f         " Path to the file
@@ -46,7 +50,7 @@ filetype off                  " required
 source ~/.dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect('~/.dotfiles/vim/bundle/{}')
 call pathogen#helptags()
-filetype plugin indent on    " required
+filetype plugin indent on     " required
 
 "==========================================================
 " Vim color theme Solarized
@@ -79,31 +83,33 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
 
-
 "==========================================================
-" normal/visual mode mappings
+" normal mode mappings
 "==========================================================
 
 let mapleader = ","
 let maplocalleader = "\\"
 
-" Clear search highlighting
-noremap <leader>h :nohlsearch<cr>
-
 " noremap = Nonrecursive Mapping
 noremap <leader>- ddp
 noremap <leader>o 2ddp
 noremap <leader>_ ddkkp
+
 " move to beggining of line
-noremap H 0
+"noremap H 0
+
 " move to end of line
-noremap L $
+"noremap L $
+
 " double quot current word
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+
 " single quot current word
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+
 " ev = edit my vimrc file
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
 " sv = source my vimrc file
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
@@ -111,16 +117,29 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap gV `[v`]
 
 " Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
+nnoremap <leader>l :set list!<CR>
+
+" Clear search highlighting
+nnoremap <leader>h :nohlsearch<cr>
+
+" Muscle memory training
+"==nnoremap <Left> <nop>
+"==nnoremap <Right> <nop>
+"==nnoremap <Up> <nop>
+"==nnoremap <Down> <nop>
 
 "==========================================================
 " insert mode mappings:
 "==========================================================
 
-" TODO: disable the added space
-inoremap <c-u> <esc>viwUi
+" upercase current word 
+inoremap <c-u> <esc>lviwUi
+
 " easy exit from insert mode
 inoremap jk <esc>
+
+" My signature
+iabbrev ssig -- <cr>Eiv Izyaev<cr>eivizyaev@gmail.com
 
 "==========================================================
 " visual mode mappings:
@@ -128,16 +147,6 @@ inoremap jk <esc>
 
 " single quot visual selection
 vnoremap <leader>' <esc>a'<esc>`<i'<esc>`>el
+
 " double quot visual selection
 vnoremap <leader>" <esc>a"<esc>`<i"<esc>`>el
-
-" My signature
-iabbrev ssig -- <cr>Eiv Izyaev<cr>eivizyaev@gmail.com
-
-" Muscle memory training
-"inoremap <esc> <nop> " Ruins Arrow keys in insert mode
-nnoremap <Left> <nop>
-nnoremap <Right> <nop>
-nnoremap <Up> <nop>
-nnoremap <Down> <nop>
-
