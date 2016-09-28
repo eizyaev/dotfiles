@@ -28,6 +28,9 @@ set hlsearch            " highlight matches
 " white space symbols when list enabled
 set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<
 
+" make backspace work normally
+set backspace=2
+
 " show status line
 set statusline=%f         " Path to the file
 set statusline+=/         " Separator
@@ -37,6 +40,8 @@ set statusline+=%l        " Current line
 set statusline+=/         " Separator
 set statusline+=%L        " Total lines
 
+" for tags to search in current folder
+set tags=./tags;/
 "==========================================================
 " Pathogen
 "==========================================================
@@ -62,6 +67,7 @@ call togglebg#map("<F5>")
 " Vim-airline
 "==========================================================
 
+set t_Co=256
 let g:airline_theme="solarized"
 set laststatus=2 "fix vim-airline doesn't appear
 
@@ -94,10 +100,6 @@ noremap <leader>h :nohlsearch<cr>
 noremap <leader>- ddp
 noremap <leader>o 2ddp
 noremap <leader>_ ddkkp
-" move to beggining of line
-noremap H 0
-" move to end of line
-noremap L $
 " double quot current word
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 " single quot current word
@@ -112,6 +114,16 @@ nnoremap gV `[v`]
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
+
+" key bind for CtrlPTag extension
+nnoremap <leader>. :CtrlPTag<cr>
+
+" TagbarToggle
+nmap <F8> :TagbarToggle<CR>
+
+" smooth half page scrolling
+:nnoremap <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
+:nnoremap <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
 
 "==========================================================
 " insert mode mappings:
@@ -136,8 +148,8 @@ iabbrev ssig -- <cr>Eiv Izyaev<cr>eivizyaev@gmail.com
 
 " Muscle memory training
 "inoremap <esc> <nop> " Ruins Arrow keys in insert mode
-nnoremap <Left> <nop>
-nnoremap <Right> <nop>
-nnoremap <Up> <nop>
-nnoremap <Down> <nop>
+"nnoremap <Left> <nop>
+"nnoremap <Right> <nop>
+"nnoremap <Up> <nop>
+"nnoremap <Down> <nop>
 
