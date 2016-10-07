@@ -51,7 +51,6 @@ let g:NERDTreeDirArrowCollapsible = '▼'
 
 " Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
-
 function! Stab()
   let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
   if l:tabstop > 0
@@ -88,19 +87,31 @@ set softtabstop=4
 " don't expand tabs into spaces
 set noexpandtab
 
-" clear trailing whitespaces function
-nnoremap <silent> <F6> :call <SID>StripTrailingWhitespaces()<CR>
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+" Preserve funcion saves cursor state and executes the command
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
 endfunction
+" Clean trailing whitespaces
+nnoremap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+" Ident all file
+nnoremap _= :call Preserve("normal gg=G")<CR>
+
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+  " Enable file type detection
+  filetype on
+
+  " Syntax of for vim files
+  autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
+endif
 
 set relativenumber " enables relative numbers
 
