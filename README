@@ -2,6 +2,10 @@ Installation:
 
     git clone https://github.com/eizyaev/dotfiles ~/.dotfiles
 
+Switch to the `~/.dotfiles` directory, and fetch submodules:
+
+    cd ~/.dotfiles && git submodule update --init
+
 Create symlinks:
 
     Only for vim:
@@ -10,8 +14,3 @@ Create symlinks:
     For cygwin users:
     .dotfiles/install_cygwin
 
-Switch to the `~/.dotfiles` directory, and fetch submodules:
-
-    cd ~/.dotfiles
-    git submodule init
-    git submodule update
