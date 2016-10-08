@@ -61,7 +61,7 @@ function! Stab()
   call SummarizeTabs()
 endfunction
 
-nnoremap <C-I> :call SummarizeTabs()<CR>
+nnoremap <C-A> :call SummarizeTabs()<CR>
 function! SummarizeTabs()
   try
     echohl ModeMsg
@@ -113,6 +113,18 @@ if has("autocmd")
   autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
+set wrap " splits long numbered line into a few displayed lines
+set linebreak " doesnt break in the middle of word
+
+" Show syntax highlighting groups for word under cursor
+nnoremap <C-C> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
 set relativenumber " enables relative numbers
 
 set numberwidth=1 " numbers offset from leftside
@@ -157,6 +169,16 @@ set tags=./tags;/
 let mapleader = ","
 let maplocalleader = "\\"
 
+" easy open files in the directory of current open file
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>eS :vsp %%
+map <leader>et :tabe %%
+
+" fold/unfold easily
+nnoremap <Space> za
+
 " Clear search highlighting
 noremap <leader>h :nohlsearch<cr>
 
@@ -168,10 +190,10 @@ noremap <leader>_ ddkkp
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 " single quot current word
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
-" ev = edit my vimrc file
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-" sv = source my vimrc file
-nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" easy vimrc files update on the run
+nnoremap <leader>sv source $MYVIMRC<CR>
+nnoremap <leader>v :tabedit $MYVIMRC<CR>
 
 " highlight last inserted text
 nnoremap gV `[v`]
@@ -188,6 +210,12 @@ nmap <F8> :TagbarToggle<CR>
 " smooth half page scrolling
 :nnoremap <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
 :nnoremap <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
+
+" switching between windowses easier
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 "==========================================================
 " insert mode mappings:
