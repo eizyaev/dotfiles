@@ -4,11 +4,11 @@ Installation:
 
 Create symlinks:
 
-	Only for vim:
+    Only for vim:
     ln -s ~/.dotfiles/vimrc ~/.vimrc
 
-	For cygwin users:
-	.dotfiles/install_cygwin
+    For cygwin users:
+    .dotfiles/install_cygwin
 
 Switch to the `~/.dotfiles` directory, and fetch submodules:
 
