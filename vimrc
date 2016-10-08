@@ -8,7 +8,7 @@ echo ">^.^<"
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
-source ~/.dotfiles/vim/bundle/vim-pathogen/autoload/pathogen.vim
+source ~/.dotfiles/vim/bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect('~/.dotfiles/vim/bundle/{}')
 call pathogen#helptags()
 filetype plugin indent on    " required

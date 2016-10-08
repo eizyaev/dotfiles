@@ -1,4 +1,6 @@
 #!/bin/bash
 
+ln -sf ~/.dotfiles/vimrc ~/.vimrc
+ln -sf ~/.dotfiles/dir_colors ~/.dir_colors
 ln -sf ~/.dotfiles/bashrc ~/.bashrc
 ln -sf ~/.dotfiles/mintty/minttyrc_dark ~/.minttyrc
