@@ -20,6 +20,7 @@ eval `dircolors ~/.dir_colors`
 
 alias ls="ls --color"
 alias desktop="cd C:/Users/user/Desktop"
+alias vmware="cd /cygdrive/c/hafala/shared"
 alias open="cygstart"
 alias reload="source ~/.bashrc"
 alias t2="ssh eiv@t2.technion.ac.il"

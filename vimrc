@@ -132,14 +132,14 @@ set numberwidth=1 " numbers offset from leftside
 " open many files when some of them are unsaved
 set hidden
 
-set showcmd             " show command in bottom bar
+set showcmd " show command in bottom bar
 
-set cursorline          " highlight current line
+set cursorline " highlight current line
 
-set wildmenu            " visual autocomplete for command menu
+set wildmenu " visual autocomplete for command menu
 
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
+set incsearch " search as characters are entered
+set hlsearch " highlight matches
 
 " white space symbols when list enabled
 set listchars=eol:¬,tab:▸-,trail:~,extends:>,precedes:<
@@ -149,6 +149,9 @@ highlight SpecialKey guifg=#a84630 " = tab
 
 " make backspace work normally
 set backspace=2
+
+" disable bell
+:set vb t_vb=
 
 " show status line
 set statusline=%f         " Path to the file
@@ -278,14 +281,11 @@ set statusline+=%L        " Total lines
 set tags=./tags;/
 
 "==========================================================
-" normal/visual mode mappings
+" normal mode mappings
 "==========================================================
 
 let mapleader = ","
 let maplocalleader = "\\"
-
-" Clear search highlighting
-noremap <leader>h :nohlsearch<cr>
 
 " noremap = Nonrecursive Mapping
 noremap <leader>- ddp
@@ -293,10 +293,13 @@ noremap <leader>o 2ddp
 noremap <leader>_ ddkkp
 " double quot current word
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+
 " single quot current word
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+
 " ev = edit my vimrc file
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
 " sv = source my vimrc file
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
@@ -320,10 +323,14 @@ nnoremap <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
 " insert mode mappings:
 "==========================================================
 
-" TODO: disable the added space
-inoremap <c-u> <esc>viwUi
+" upercase current word 
+inoremap <c-u> <esc>lviwUi
+
 " easy exit from insert mode
 inoremap jk <esc>
+
+" My signature
+iabbrev ssig -- <cr>Eiv Izyaev<cr>eivizyaev@gmail.com
 
 "==========================================================
 " visual mode mappings:
@@ -331,6 +338,7 @@ inoremap jk <esc>
 
 " single quot visual selection
 vnoremap <leader>' <esc>a'<esc>`<i'<esc>`>el
+
 " double quot visual selection
 vnoremap <leader>" <esc>a"<esc>`<i"<esc>`>el
 
