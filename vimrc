@@ -32,6 +32,12 @@ let g:airline_theme="solarized"
 set laststatus=2 "fix vim-airline doesn't appear
 
 "==========================================================
+" Vim-Mark
+"==========================================================
+
+autocmd ColorScheme * source ~/.dotfiles/mark.vim
+
+"==========================================================
 " NERDTree configurations
 "==========================================================
 
@@ -125,7 +131,8 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-set relativenumber " enables relative numbers
+"set relativenumber " enables relative numbers
+set number
 
 set numberwidth=1 " numbers offset from leftside
 
