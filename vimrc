@@ -34,8 +34,8 @@ if has("autocmd")
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     " Syntax of for vim files
     autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd InsertEnter * :set number
-    autocmd InsertLeave * :set relativenumber
+    autocmd InsertEnter * :set number | :set norelativenumber
+    autocmd InsertLeave * :set number | :set relativenumber
   augroup END
 endif
 
@@ -141,12 +141,15 @@ function! <SID>SynStack()
 endfunc
 
 " show the line numbers
+set number
 set relativenumber
 
 function! NumberToggle()
   if(&relativenumber == 1)
     set number
+    set norelativenumber
   else
+    set number
     set relativenumber
   endif
 endfunc
@@ -270,4 +273,3 @@ iabbrev ssig -- <cr>Eiv Izyaev<cr>eivizyaev@gmail.com
 "nnoremap <Right> <nop>
 "nnoremap <Up> <nop>
 "nnoremap <Down> <nop>
-" don't expand tabs into spaces
