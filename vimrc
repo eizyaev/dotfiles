@@ -34,6 +34,8 @@ if has("autocmd")
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     " Syntax of for vim files
     autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd InsertEnter * :set number
+    autocmd InsertLeave * :set relativenumber
   augroup END
 endif
 
@@ -138,8 +140,18 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-"set relativenumber " enables relative numbers
-set number
+" show the line numbers
+set relativenumber
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-m> :call NumberToggle()<cr>
 
 set numberwidth=1 " numbers offset from leftside
 
