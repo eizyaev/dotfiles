@@ -100,11 +100,11 @@ function! SummarizeTabs()
 endfunction
 
 if !exists("g:my_tabs")
-  " show existing tab with 4 spaces width
+  " completing full tab for tabstop length
   set tabstop=4
   " when indenting with '>', use 4 spaces width
   set shiftwidth=4
-  " when expandtab enabled, delete 4 space with backspace
+  " the amount of spaces to insert/delete for wach tab key
   set softtabstop=4
   " don't expand tabs into spaces
   set noexpandtab
@@ -171,7 +171,7 @@ set incsearch " search as characters are entered
 set hlsearch " highlight matches
 
 " white space symbols when list enabled
-set listchars=eol:¬,tab:▸-,trail:~,extends:>,precedes:<
+set listchars=eol:¬,tab:•-,trail:~,extends:>,precedes:<
 "Invisible character colors
 highlight NonText guifg=#4a4a59 " = eol
 highlight SpecialKey guifg=#a84630 " = tab
