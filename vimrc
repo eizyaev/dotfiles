@@ -130,6 +130,9 @@ nnoremap _= :call Preserve("normal gg=G")<CR>
 
 set wrap " splits long numbered line into a few displayed lines
 set linebreak " doesnt break in the middle of word
+set ignorecase " case insensitive search
+" when searching with uppercase char do case sensitive search
+set smartcase
 
 " Show syntax highlighting groups for word under cursor
 nnoremap <C-C> :call <SID>SynStack()<CR>
