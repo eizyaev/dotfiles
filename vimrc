@@ -63,7 +63,7 @@ set laststatus=2 "fix vim-airline doesn't appear
 
 " Map NERDtree to <C-n>
 map <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeDirArrowExpandable = '▶'
+let g:NERDTreeDirArrowExpandable = '►'
 let g:NERDTreeDirArrowCollapsible = '▼'
 
 "==========================================================
