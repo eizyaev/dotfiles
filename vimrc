@@ -67,6 +67,19 @@ let g:NERDTreeDirArrowExpandable = '►'
 let g:NERDTreeDirArrowCollapsible = '▼'
 
 "==========================================================
+" Syntastic
+"==========================================================
+"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"==========================================================
 " General settings:
 "==========================================================
 
@@ -266,13 +279,3 @@ inoremap jk <esc>
 vnoremap <leader>' <esc>a'<esc>`<i'<esc>`>el
 " double quot visual selection
 vnoremap <leader>" <esc>a"<esc>`<i"<esc>`>el
-
-" My signature
-iabbrev ssig -- <cr>Eiv Izyaev<cr>eivizyaev@gmail.com
-
-" Muscle memory training
-"inoremap <esc> <nop> " Ruins Arrow keys in insert mode
-"nnoremap <Left> <nop>
-"nnoremap <Right> <nop>
-"nnoremap <Up> <nop>
-"nnoremap <Down> <nop>
