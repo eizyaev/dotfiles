@@ -7,3 +7,5 @@
 	name = Eiv Izyaev
 [web]
 	browser = cygstart
+[color]
+	ui = true

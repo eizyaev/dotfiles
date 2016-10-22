@@ -1,5 +1,7 @@
 # For ls command colors to work with Solarized color scheme
 eval `dircolors ~/.dir_colors`
+# Add current directory to the PATH variable
+export PATH=$PATH:.
 
 # Useful shortcuts
 alias ls="ls --color"
