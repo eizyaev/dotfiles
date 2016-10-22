@@ -34,6 +34,7 @@ if has("autocmd")
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     " Syntax of for vim files
     autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab
     autocmd InsertEnter * :set number | :set norelativenumber
     autocmd InsertLeave * :set number | :set relativenumber
   augroup END
