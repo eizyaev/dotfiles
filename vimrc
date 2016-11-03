@@ -124,7 +124,7 @@ if !exists("g:my_tabs")
   " the amount of spaces to insert/delete for wach tab key
   set softtabstop=4
   " don't expand tabs into spaces
-  set noexpandtab
+  set expandtab
   let g:my_tabs=1
 endif
 
