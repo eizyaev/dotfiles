@@ -14,6 +14,8 @@ alias t2="ssh eiv@t2.technion.ac.il"
 
 # Tools shortcuts
 alias vi='/usr/bin/vim'
+alias werl='/cygdrive/c/"Program Files"/erl8.1/bin/werl.exe'
+alias erl='/cygdrive/c/"Program Files"/erl8.1/bin/erl.exe'
 
 # Consider deleting
 alias desktop="cd C:/Users/user/Desktop"
