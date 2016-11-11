@@ -19,7 +19,7 @@ filetype plugin indent on    " required
 " My autocmd's
 "==========================================================
 
-" Only do this part when compiled with support for autocommands
+" Only do this part when compiled with support for auto commands
 if has("autocmd")
   " Enable file type detection
   filetype on
@@ -121,14 +121,14 @@ if !exists("g:my_tabs")
   set tabstop=4
   " when indenting with '>', use 4 spaces width
   set shiftwidth=4
-  " the amount of spaces to insert/delete for wach tab key
+  " the amount of spaces to insert/delete for each tab key
   set softtabstop=4
   " don't expand tabs into spaces
   set expandtab
   let g:my_tabs=1
 endif
 
-" Preserve funcion saves cursor state and executes the command
+" Preserve function saves cursor state and executes the command
 function! Preserve(command)
   " Preparation: save last search, and cursor position.
   let _s=@/
@@ -140,13 +140,14 @@ function! Preserve(command)
   let @/=_s
   call cursor(l, c)
 endfunction
-" Clean trailing whitespaces
+" Clean trailing white spaces
 nnoremap _$ :call Preserve("%s/\\s\\+$//e")<CR>
-" Ident all file
+" Indent all file
 nnoremap _= :call Preserve("normal gg=G")<CR>
 
 set wrap " splits long numbered line into a few displayed lines
-set linebreak " doesnt break in the middle of word
+set linebreak " doesn't break in the middle of word
+set showbreak=… " if a line is broken adds '…' at start of the ling
 set ignorecase " case insensitive search
 " when searching with uppercase char do case sensitive search
 set smartcase
@@ -176,7 +177,7 @@ endfunc
 
 nnoremap <C-m> :call NumberToggle()<cr>
 
-set numberwidth=1 " numbers offset from leftside
+set numberwidth=1 " numbers offset from left side
 
 " open many files when some of them are unsaved
 set hidden
@@ -185,7 +186,7 @@ set showcmd " show command in bottom bar
 
 set cursorline " highlight current line
 
-set wildmenu " visual autocomplete for command menu
+set wildmenu " visual auto complete for command menu
 
 set incsearch " search as characters are entered
 set hlsearch " highlight matches
@@ -231,7 +232,7 @@ nnoremap <Space> za
 " Clear search highlighting
 noremap <leader>h :nohlsearch<cr>
 
-" noremap = Nonrecursive Mapping
+" noremap = Non recursive Mapping
 noremap <leader>- ddp
 noremap <leader>o 2ddp
 noremap <leader>_ ddkkp
@@ -242,7 +243,7 @@ nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 
 " easy vimrc files update on the run
 nnoremap <leader>sv :source $MYVIMRC<CR>
-nnoremap <leader>v  :tabedit $MYVIMRC<CR>
+nnoremap <leader>ev  :tabedit $MYVIMRC<CR>
 
 " highlight last inserted text
 nnoremap gV `[v`]
@@ -256,7 +257,11 @@ nnoremap <leader>. :CtrlPTag<cr>
 " TagbarToggle
 nmap <F8> :TagbarToggle<CR>
 
-" switching between windowses easier
+" Toggle spell checking on and off with
+nmap <silent> <leader>s :set spell!<CR>
+set spelllang=en_us "us English spell checking
+
+" switching between windows easier
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
