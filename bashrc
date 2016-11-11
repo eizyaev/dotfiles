@@ -43,12 +43,12 @@ function gh() {
 # Solarized colorscheme toggle
 lightc()
 {
-  ln -sf dotfiles/mintty/.dir_colors_light ~/.dir_colors
-  ln -sf dotfiles/mintty/.minttyrc_light ~/.minttyrc
+  ln -sf ~/.dotfiles/mintty/dir_colors_light ~/.dir_colors
+  ln -sf ~/.dotfiles/mintty/minttyrc_light ~/.minttyrc
 }
 
 darkc()
 {
-  ln -sf dotfiles/mintty/.dir_colors_dark ~/.dir_colors
-  ln -sf dotfiles/mintty/.minttyrc_dark ~/.minttyrc
+  ln -sf ~/.dotfiles/mintty/dir_colors_dark ~/.dir_colors
+  ln -sf ~/.dotfiles/mintty/minttyrc_dark ~/.minttyrc
 }

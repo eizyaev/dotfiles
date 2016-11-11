@@ -256,10 +256,6 @@ nnoremap <leader>. :CtrlPTag<cr>
 " TagbarToggle
 nmap <F8> :TagbarToggle<CR>
 
-" smooth half page scrolling
-:nnoremap <C-D> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
-:nnoremap <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
-
 " switching between windowses easier
 map <C-h> <C-w>h
 map <C-j> <C-w>j
