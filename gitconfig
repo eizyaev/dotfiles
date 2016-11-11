@@ -1,11 +1,16 @@
 [core]
-	eol = lf
-	autocrlf = input
-	editor = vim
+    eol = lf
+    autocrlf = input
+    editor = vim
 [user]
-	email = eivizyaev@gmail.com
-	name = Eiv Izyaev
+    email = eivizyaev@gmail.com
+    name = Eiv Izyaev
 [web]
-	browser = cygstart
+    browser = cygstart
 [color]
-	ui = true
+    ui = true
+[alias]
+    st = status
+    co = checkout
+    br = branch
+
