@@ -42,3 +42,7 @@
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 	ignore = dirty
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
+	ignore = dirty
