@@ -36,8 +36,8 @@ if has("autocmd")
     " Syntax of for vim files
     autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab
-    autocmd InsertEnter * :set number | :set norelativenumber
-    autocmd InsertLeave * :set number | :set relativenumber
+    "autocmd InsertEnter * :set number | :set norelativenumber
+    "autocmd InsertLeave * :set number | :set relativenumber
   augroup END
 endif
 
@@ -187,7 +187,7 @@ endfunc
 
 " show the line numbers
 set number
-set relativenumber
+"set relativenumber
 
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -208,7 +208,7 @@ set hidden
 
 set showcmd " show command in bottom bar
 
-set cursorline " highlight current line
+"set cursorline " highlight current line
 
 set wildmenu " visual auto complete for command menu
 
