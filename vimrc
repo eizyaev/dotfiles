@@ -79,9 +79,11 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler = 'clang++' "cpp compiler
+let g:syntastic_cpp_compiler_options = ' -std=c++14' "support 'c++11' standart
 
 nnoremap <C-x> :call SyntasticToggleMode()<CR>
 
