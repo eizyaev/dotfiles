@@ -1,11 +1,11 @@
-"==========================================================
+"=============================================================================
 " My awesome vimrc file!
-"==========================================================
+"=============================================================================
 let mapleader = ","
 let maplocalleader = "\\"
-"==========================================================
+"=============================================================================
 " Pathogen
-"==========================================================
+"=============================================================================
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -14,9 +14,9 @@ call pathogen#infect('~/.dotfiles/vim/bundle/{}')
 call pathogen#helptags()
 filetype plugin indent on    " required
 
-"==========================================================
+"=============================================================================
 " My autocmd's
-"==========================================================
+"=============================================================================
 
 " Only do this part when compiled with support for auto commands
 if has("autocmd")
@@ -28,10 +28,12 @@ if has("autocmd")
     autocmd ColorScheme * source ~/.dotfiles/mark.vim
     " Open NERDTree when no files specified
     autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree
+      \ | endif
     autocmd VimEnter * SyntasticToggleMode
     " Close window if the only window left is NERDTree
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") &&
+      \ b:NERDTree.isTabTree()) | q | endif
     " Syntax of for vim files
     autocmd FileType vim setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType sh setlocal ts=2 sts=2 sw=2 expandtab
@@ -40,9 +42,9 @@ if has("autocmd")
   augroup END
 endif
 
-"==========================================================
+"=============================================================================
 " Vim color theme Solarized
-"==========================================================
+"=============================================================================
 
 set t_Co=256
 syntax enable
@@ -52,25 +54,25 @@ call togglebg#map("<F5>")
 "colorscheme solarized
 colorscheme xoria256
 
-"==========================================================
+"=============================================================================
 " Vim-airline
-"==========================================================
+"=============================================================================
 
 let g:airline_theme="solarized"
 set laststatus=2 "fix vim-airline doesn't appear
 
-"==========================================================
+"=============================================================================
 " NERDTree configurations
-"==========================================================
+"=============================================================================
 
 " Map NERDtree to <C-n>
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '►'
 let g:NERDTreeDirArrowCollapsible = '▼'
 
-"==========================================================
+"=============================================================================
 " Syntastic
-"==========================================================
+"=============================================================================
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -83,9 +85,9 @@ let g:syntastic_check_on_wq = 0
 
 nnoremap <C-x> :call SyntasticToggleMode()<CR>
 
-"==========================================================
+"=============================================================================
 " Tabular
-"==========================================================
+"=============================================================================
 
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
@@ -98,18 +100,20 @@ inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+  if exists(':Tabularize') && getline('.') =~# '^\s*|'
+      \ && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
     let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
     let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
     Tabularize/|/l1
     normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),
+      \ 'ce',line('.'))
   endif
 endfunction
 
-"==========================================================
+"=============================================================================
 " General settings:
-"==========================================================
+"=============================================================================
 
 " Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
@@ -238,9 +242,9 @@ set statusline+=%L        " Total lines
 " for tags to search in current folder
 set tags=./tags;/
 
-"==========================================================
+"=============================================================================
 " normal/visual mode mappings
-"==========================================================
+"=============================================================================
 
 " easy open files in the directory of current open file
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
@@ -290,18 +294,18 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-"==========================================================
+"=============================================================================
 " insert mode mappings:
-"==========================================================
+"=============================================================================
 
 " TODO: disable the added space
 inoremap <c-u> <esc>viwUi
 " easy exit from insert mode
 inoremap jk <esc>
 
-"==========================================================
+"=============================================================================
 " visual mode mappings:
-"==========================================================
+"=============================================================================
 
 " single quot visual selection
 vnoremap <leader>' <esc>a'<esc>`<i'<esc>`>el
