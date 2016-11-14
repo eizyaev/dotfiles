@@ -1,7 +1,6 @@
 "==========================================================
 " My awesome vimrc file!
 "==========================================================
-echo ">^.^<"
 let mapleader = ","
 let maplocalleader = "\\"
 "==========================================================
@@ -50,7 +49,8 @@ syntax enable
 set background=dark
 let g:solarized_termtrans=1
 call togglebg#map("<F5>")
-colorscheme solarized
+"colorscheme solarized
+colorscheme xoria256
 
 "==========================================================
 " Vim-airline
@@ -175,6 +175,8 @@ set showbreak=… " if a line is broken adds '…' at start of the ling
 set ignorecase " case insensitive search
 " when searching with uppercase char do case sensitive search
 set smartcase
+set textwidth=80 "break lines at 80
+set colorcolumn=+1 "add line at 80 to see the margin
 
 " Show syntax highlighting groups for word under cursor
 nnoremap <C-C> :call <SID>SynStack()<CR>
@@ -217,9 +219,6 @@ set hlsearch " highlight matches
 
 " white space symbols when list enabled
 set listchars=eol:¬,tab:•-,trail:~,extends:>,precedes:<
-"Invisible character colors
-highlight NonText guifg=#4a4a59 " = eol
-highlight SpecialKey guifg=#a84630 " = tab
 
 " make backspace work normally
 set backspace=2
