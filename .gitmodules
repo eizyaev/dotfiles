@@ -46,3 +46,11 @@
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
 	ignore = dirty
+[submodule "vim/bundle/xoria256"]
+	path = vim/bundle/xoria256
+	url = https://github.com/vim-scripts/xoria256.vim/
+	ignore = dirty
+[submodule "vim/bundle/whitespace"]
+	path = vim/bundle/whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace
+	ignore = dirty
