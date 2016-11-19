@@ -1,7 +1,9 @@
 # For ls command colors to work with Solarized color scheme
 eval `dircolors ~/.dir_colors`
 # Add current directory to the PATH variable
-export PATH=$PATH:.
+export PATH=.:$PATH
+export PATH=/cygdrive/c/Users/user/Anaconda3/:$PATH
+export PATH=/cygdrive/c/Program\ Files/erl8.1/bin/:$PATH
 
 # Useful shortcuts
 alias ls="ls --color"
