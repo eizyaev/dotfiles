@@ -58,3 +58,7 @@
 	path = vim/bundle/tComment
 	url = https://github.com/tomtom/tcomment_vim
 	ignore = dirty
+[submodule "vim/bundle/surround_tpope"]
+	path = vim/bundle/surround_tpope
+	url = https://github.com/tpope/vim-surround
+	ignore = dirty
