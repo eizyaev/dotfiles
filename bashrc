@@ -27,6 +27,9 @@ alias updot="git submodule update --init --recursive"
 alias cdgit='cd  /cygdrive/c/Users/user/Documents/GitHub'
 alias hafala2='cd  /cygdrive/c/hafala/shared/Afala_1'
 
+# enables to scroll completes with tab
+bind '"\t":menu-complete'
+
 # Opens the github page for the current git repository in your browser
 # git@github.com:jasonneylon/dotfiles.git
 # https://github.com/jasonneylon/dotfiles/
