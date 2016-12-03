@@ -62,12 +62,6 @@ colorscheme xoria256
 command! -bar -nargs=1 Browse silent! exe '!cygstart' shellescape(<q-args>, 1)
 set foldlevel=10 " no folding, easier use of Gedit command
 
-" special mapping to go the parent tree from tree/blob only
-autocmd User fugitive
-  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-  \   nnoremap <buffer> .. :edit %:h<CR> |
-  \ endif
-
 "=============================================================================
 " Vim-airline
 "=============================================================================
