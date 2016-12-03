@@ -66,7 +66,7 @@ set foldlevel=10 " no folding, easier use of Gedit command
 " Vim-airline
 "=============================================================================
 
-let g:airline_theme="solarized"
+" let g:airline_theme="solarized"
 set laststatus=2 "fix vim-airline doesn't appear
 
 "=============================================================================
