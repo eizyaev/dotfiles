@@ -60,6 +60,7 @@ colorscheme xoria256
 
 " define Browse command so :Gbrowse work correctly
 command! -bar -nargs=1 Browse silent! exe '!cygstart' shellescape(<q-args>, 1)
+set foldlevel=10 " no folding, easier use of Gedit command
 
 "=============================================================================
 " Vim-airline
