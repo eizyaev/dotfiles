@@ -3,7 +3,7 @@ eval `dircolors ~/.dir_colors`
 # Add current directory to the PATH variable
 export PATH=.:$PATH
 export PATH=/cygdrive/c/Users/user/Anaconda3/:$PATH
-export PATH=/cygdrive/c/Program\ Files/erl8.1/bin/:$PATH
+export PATH=$PATH:/cygdrive/c/cygwin64/bin/erl8.1/bin/ # erlang OTP
 
 # Useful shortcuts
 alias ls="ls --color"
@@ -17,8 +17,6 @@ alias g="grep -n --color=always"
 
 # Tools shortcuts
 alias vi='/usr/bin/vim'
-alias werl='/cygdrive/c/"Program Files"/erl8.1/bin/werl.exe'
-alias erl='/cygdrive/c/"Program Files"/erl8.1/bin/erl.exe'
 
 # Consider deleting
 alias desktop="cd C:/Users/user/Desktop"
