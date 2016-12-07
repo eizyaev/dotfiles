@@ -125,6 +125,9 @@ endfunction
 " General settings:
 "=============================================================================
 
+" always show current file title
+set title
+
 " Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
 function! Stab()
