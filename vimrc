@@ -128,6 +128,17 @@ endfunction
 " always show current file title
 set title
 
+" split window
+nnoremap <leader>swh :topleft  vnew<CR>
+nnoremap <leader>swl :botright vnew<CR>
+nnoremap <leader>swk :topleft  new<CR>
+nnoremap <leader>swj :botright new<CR>
+" split buffer
+nnoremap <leader>sh  :leftabove  vnew<CR>
+nnoremap <leader>sl  :rightbelow vnew<CR>
+nnoremap <leader>sk  :leftabove  new<CR>
+nnoremap <leader>sj  :rightbelow new<CR>
+
 " Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
 function! Stab()
@@ -298,7 +309,7 @@ nnoremap <leader>. :CtrlPTag<cr>
 nmap <F8> :TagbarToggle<CR>
 
 " Toggle spell checking on and off with
-nmap <silent> <leader>s :set spell!<CR>
+nmap <silent> <leader>sc :set spell!<CR>
 set spelllang=en_us "us English spell checking
 
 " switching between windows easier
