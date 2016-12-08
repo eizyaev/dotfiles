@@ -13,6 +13,7 @@ alias ..="cd .."
 alias ...="cd ~"
 alias reload="source ~/.bashrc"
 alias t2="ssh eiv@t2.technion.ac.il"
+alias g="grep -n --color=always"
 
 # Tools shortcuts
 alias vi='/usr/bin/vim'
