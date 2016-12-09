@@ -276,10 +276,10 @@ set tags=./tags;/
 
 " easy open files in the directory of current open file
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>eS :vsp %%
-map <leader>et :tabe %%
+noremap <leader>ew :e %%
+noremap <leader>es :sp %%
+noremap <leader>eS :vsp %%
+noremap <leader>et :tabe %%
 
 " fold/unfold easily
 nnoremap <Space> za
@@ -310,17 +310,17 @@ nnoremap <leader>l :set list!<CR>
 nnoremap <leader>. :CtrlPTag<cr>
 
 " TagbarToggle
-nmap <F8> :TagbarToggle<CR>
+nnoremap <F8> :TagbarToggle<CR>
 
 " Toggle spell checking on and off with
-nmap <silent> <leader>sc :set spell!<CR>
+nnoremap <silent> <leader>sc :set spell!<CR>
 set spelllang=en_us "us English spell checking
 
 " switching between windows easier
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
 "=============================================================================
 " insert mode mappings:
