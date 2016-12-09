@@ -235,7 +235,7 @@ endfunc
 
 nnoremap <C-m> :call NumberToggle()<cr>
 
-set numberwidth=1 " numbers offset from left side
+set numberwidth=4 " numbers offset from left side
 
 " open many files when some of them are unsaved
 set hidden
@@ -326,8 +326,9 @@ map <C-l> <C-w>l
 " insert mode mappings:
 "=============================================================================
 
-" TODO: disable the added space
-inoremap <c-u> <esc>viwUi
+" uppercase current word - usefull for typing long constants in lower case
+" and uppercase them in the end
+inoremap <c-u> <esc>viwUea
 " easy exit from insert mode
 inoremap jk <esc>
 
