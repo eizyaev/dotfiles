@@ -128,6 +128,10 @@ endfunction
 " always show current file title
 set title
 
+" more intuitive default splits
+set splitbelow
+set splitright
+
 " split window
 nnoremap <leader>swh :topleft  vnew<CR>
 nnoremap <leader>swl :botright vnew<CR>
