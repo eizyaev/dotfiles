@@ -17,6 +17,7 @@ alias g="grep -n --color=always"
 
 # Tools shortcuts
 alias vi='/usr/bin/vim'
+alias vimd='vim -u NONE'
 
 # Consider deleting
 alias desktop="cd C:/Users/user/Desktop"
