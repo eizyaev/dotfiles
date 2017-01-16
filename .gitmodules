@@ -58,3 +58,9 @@
 	path = vim/bundle/surround_tpope
 	url = https://github.com/tpope/vim-surround
 	ignore = dirty
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "vim/bundle/vimerl"]
+	path = vim/bundle/vimerl
+	url = https://github.com/vim-erlang/vim-erlang-runtime
