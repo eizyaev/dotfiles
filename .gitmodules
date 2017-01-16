@@ -34,10 +34,6 @@
 	path = vim/bundle/python_pep8
 	url = https://github.com/hynek/vim-python-pep8-indent
 	ignore = dirty
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-	ignore = dirty
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
@@ -62,6 +58,3 @@
 	path = vim/bundle/surround_tpope
 	url = https://github.com/tpope/vim-surround
 	ignore = dirty
-[submodule "vim/bundle/vimerl"]
-	path = vim/bundle/vimerl
-	url = https://github.com/jimenezrick/vimerl
